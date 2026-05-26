@@ -1,0 +1,15 @@
+[Unit]
+Description=GOST-Checker FastAPI service
+After=network.target
+
+[Service]
+WorkingDirectory=/opt/gost-checker/backend
+EnvironmentFile=/opt/gost-checker/backend/.env
+ExecStart=/opt/gost-checker/backend/venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8000
+Restart=always
+RestartSec=5
+User=www-data
+Group=www-data
+
+[Install]
+WantedBy=multi-user.target

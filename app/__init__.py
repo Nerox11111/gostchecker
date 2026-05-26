@@ -1,0 +1,2 @@
+"""GOST-Checker backend package."""
+
